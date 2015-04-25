@@ -25,4 +25,5 @@ rm -R /etc/apache2/sites-enabled/*
 # changements du port
 sed -i 's/NameVirtualHost \*:80/NameVirtualHost \*:8081/g' /etc/apache2/ports.conf
 sed -i 's/Listen 80/Listen 8081/g' /etc/apache2/ports.conf
+sed -i 's/Include ports.conf/#Include ports.conf/g' /etc/apache2/apache2.conf
 
