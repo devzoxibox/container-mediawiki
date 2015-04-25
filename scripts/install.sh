@@ -24,6 +24,6 @@ rm -R /etc/apache2/sites-enabled/*
 
 # changements du port
 sed -i 's/Include ports.conf/#Include ports.conf/g' /etc/apache2/apache2.conf
-sed -i 's/export APACHE_RUN_USER=www-data/export APACHE_RUN_USER=nobody/g' /etc/apache2/envvars
-sed -i 's/export APACHE_RUN_GROUP=www-data/export APACHE_RUN_GROUP=users/g' /etc/apache2/envvars
+#sed -i 's/export APACHE_RUN_USER=www-data/export APACHE_RUN_USER=nobody/g' /etc/apache2/envvars
+#sed -i 's/export APACHE_RUN_GROUP=www-data/export APACHE_RUN_GROUP=users/g' /etc/apache2/envvars
 
