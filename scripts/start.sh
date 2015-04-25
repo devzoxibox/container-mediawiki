@@ -4,5 +4,5 @@
 ln -s /usr/share/mediawiki/ /config 
 
 # Démarrage
-exec "$@"
+service apache2 start
 
