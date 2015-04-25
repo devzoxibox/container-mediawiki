@@ -1,8 +1,13 @@
 #!/bin/bash
 
-# fichiers config
-cp -R /usr/share/mediawiki/* /config 
+if [ ! -f "/config/*" ]; then
+
+	# copy over customised config
+	cp -R /usr/share/mediawiki/* /config
+				
+fi
+
 
 # Démarrage
-/bin/bash -c "/usr/sbin/apache2"
+exec /usr/sbin/apache2ctl -D FOREGROUND
 
