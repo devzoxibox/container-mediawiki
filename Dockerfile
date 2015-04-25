@@ -31,3 +31,5 @@ RUN chmod +x /*.sh
 USER nobody
 
 ENTRYPOINT ["/start.sh"]
+
+CMD ["apache2-foreground"]
