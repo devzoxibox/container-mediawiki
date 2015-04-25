@@ -28,6 +28,6 @@ sed -i 's/Include ports.conf/#Include ports.conf/g' /etc/apache2/apache2.conf
 # changement user apache2
 chown -R nobody:users /var/lock/apache2/
 chown -R nobody:users /var/log/apache2/
-sed -i 's/export APACHE_RUN_USER=www-data/export APACHE_RUN_USER=nobody/g' /etc/apache2/envvars
-sed -i 's/export APACHE_RUN_GROUP=www-data/export APACHE_RUN_GROUP=users/g' /etc/apache2/envvars
+#sed -i 's/export APACHE_RUN_USER=www-data/export APACHE_RUN_USER=nobody/g' /etc/apache2/envvars
+#sed -i 's/export APACHE_RUN_GROUP=www-data/export APACHE_RUN_GROUP=users/g' /etc/apache2/envvars
 
