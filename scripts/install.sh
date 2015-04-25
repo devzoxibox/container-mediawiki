@@ -17,5 +17,5 @@ apt-get update && apt-get -q -y install mediawiki phpmyadmin
 # Remove config apache2
 rm /etc/apache2/conf.d/phpmyadmin.conf
 rm /etc/apache2/conf.d/mediawiki.conf
-
+rm -R /etc/apache2/sites-enabled/*
 
