@@ -14,6 +14,9 @@ echo 'phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2' | debconf
 # Installation de phpmyadmin mediawiki
 apt-get update && apt-get -q -y install mediawiki phpmyadmin
 
+# modif dossier mediawiki
+#cp -R /usr/share/mediawiki /config
+
 # Remove config apache2
 rm /etc/apache2/conf.d/phpmyadmin.conf
 rm /etc/apache2/conf.d/mediawiki.conf
