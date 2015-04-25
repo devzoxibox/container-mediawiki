@@ -28,7 +28,5 @@ RUN chown -R nobody:users /usr/share/mediawiki
 ADD /scripts/start.sh /start.sh
 RUN chmod +x /*.sh
 
-# Passage en user "nobody"
-USER nobody
 
 ENTRYPOINT ["/start.sh"]
