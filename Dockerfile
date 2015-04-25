@@ -22,11 +22,13 @@ VOLUME /config
 
 # Ajout des droits
 RUN chown -R nobody:users /config
+RUN chown -R nobody:users /etc/apache2
 RUN chown -R nobody:users /usr/share/mediawiki
 
 # Ajout du script de démarrage 
 ADD /scripts/start.sh /start.sh
 RUN chmod +x /*.sh
 
+USER nobody
 
 ENTRYPOINT ["/start.sh"]
