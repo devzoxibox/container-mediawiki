@@ -20,9 +20,9 @@ EXPOSE 8088
 # Volume
 VOLUME /config
 
-# Ajout des droits à "/config"
+# Ajout des droits
 RUN chown -R nobody:users /config
-
+RUN chown -R nobody:users /usr/share/mediawiki
 # Ajout du script de démarrage 
 ADD /scripts/start.sh /start.sh
 RUN chmod +x /*.sh
