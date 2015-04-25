@@ -13,6 +13,12 @@ RUN chmod +x /tmp/*.sh && \
 ADD /apache/phpmyadmin.conf /etc/apache2/conf.d/phpmyadmin.conf
 ADD /apache/mediawiki.conf /etc/apache2/conf.d/mediawiki.conf
 
+ENV APACHE_RUN_USER nobody
+ENV APACHE_RUN_GROUP users
+ENV APACHE_LOG_DIR /var/log/apache2
+ENV APACHE_LOCK_DIR /var/lock/apache2
+ENV APACHE_PID_FILE /var/run/apache2.pid
+
 # Ports
 EXPOSE 8081
 EXPOSE 8088
@@ -22,7 +28,6 @@ VOLUME /config
 
 # Ajout des droits
 RUN chown -R nobody:users /config
-RUN chown -R nobody:users /etc/apache2
 RUN chown -R nobody:users /usr/share/mediawiki
 
 # Ajout du script de démarrage 
