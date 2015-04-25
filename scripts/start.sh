@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # fichiers config
-ln -s /config /usr/share/mediawiki
+ln -s /usr/share/mediawiki /config 
 
 # Démarrage
 exec "$@"
