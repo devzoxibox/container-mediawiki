@@ -4,5 +4,5 @@
 cp -R /usr/share/mediawiki/* /config 
 
 # Démarrage
-exec /usr/sbin/apache2 -D FOREGROUND
+exec /usr/sbin/apache2ctl start
 
