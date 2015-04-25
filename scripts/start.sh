@@ -4,5 +4,5 @@
 cp -R /usr/share/mediawiki/* /config 
 
 # Démarrage
-service apache2 start
+exec /usr/sbin/apache2 -D FOREGROUND
 
