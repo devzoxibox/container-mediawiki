@@ -21,6 +21,7 @@ apt-get update && apt-get -q -y install mediawiki phpmyadmin
 rm /etc/apache2/conf.d/phpmyadmin.conf
 rm /etc/apache2/conf.d/mediawiki.conf
 rm -R /etc/apache2/sites-enabled/*
+rm -R /etc/apache2/sites-available/*
 
 # changement du port
 sed -i 's/Include ports.conf/#Include ports.conf/g' /etc/apache2/apache2.conf
