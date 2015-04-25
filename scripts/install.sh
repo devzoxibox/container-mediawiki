@@ -22,8 +22,11 @@ rm /etc/apache2/conf.d/phpmyadmin.conf
 rm /etc/apache2/conf.d/mediawiki.conf
 rm -R /etc/apache2/sites-enabled/*
 
-# changements du port
+# changement du port
 sed -i 's/Include ports.conf/#Include ports.conf/g' /etc/apache2/apache2.conf
+
+# changement user apache2
+chown -R nobody:users /var/lock/apache2/
 sed -i 's/export APACHE_RUN_USER=www-data/export APACHE_RUN_USER=nobody/g' /etc/apache2/envvars
 sed -i 's/export APACHE_RUN_GROUP=www-data/export APACHE_RUN_GROUP=users/g' /etc/apache2/envvars
 
