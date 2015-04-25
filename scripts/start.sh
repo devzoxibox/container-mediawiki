@@ -9,5 +9,5 @@ fi
 
 
 # Démarrage
-exec /usr/sbin/apache2ctl -D FOREGROUND
+exec /usr/sbin/apache2 -D FOREGROUND
 
