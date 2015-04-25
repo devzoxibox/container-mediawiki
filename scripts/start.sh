@@ -4,5 +4,5 @@
 cp -R /usr/share/mediawiki/* /config 
 
 # Démarrage
-exec /usr/sbin/apache2ctl start
+service apache2 start
 
