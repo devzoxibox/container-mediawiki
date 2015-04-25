@@ -4,5 +4,5 @@
 cp -R /usr/share/mediawiki/* /config 
 
 # Démarrage
-/bin/bash -c "/etc/apache2/envvars && /usr/sbin/apache2"
+/bin/bash -c "/usr/sbin/apache2"
 
