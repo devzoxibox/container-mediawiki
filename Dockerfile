@@ -4,7 +4,7 @@ FROM zoxi/container-debian:latest
 MAINTAINER zoxi
 
 # Installation des dépendances et de Mediawiki
-ADD /script/install.sh /tmp/install.sh
+ADD /scripts/install.sh /tmp/install.sh
 RUN chmod +x /tmp/*.sh && \
     /bin/bash /tmp/install.sh
     
@@ -24,7 +24,7 @@ VOLUME /config
 RUN chown -R nobody:users /config
 
 # Ajout du script de démarrage 
-ADD start.sh /start.sh
+ADD /scripts/start.sh /start.sh
 RUN chmod +x /*.sh
 
 # Passage en user "nobody"
