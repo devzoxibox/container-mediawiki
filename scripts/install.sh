@@ -24,7 +24,7 @@ rm -R /etc/apache2/sites-enabled/*
 rm -R /etc/apache2/sites-available/*
 
 # changement du port
-sed -i 's/Include ports.conf/#Include ports.conf/g' /etc/apache2/apache2.conf
+#sed -i 's/Include ports.conf/#Include ports.conf/g' /etc/apache2/apache2.conf
 
 # changement user apache2
 #chown -R nobody:users /var/lock/apache2/
