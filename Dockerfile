@@ -19,6 +19,7 @@ ADD /supervisord-mysqld.conf /etc/supervisor/conf.d/supervisord-mysqld.conf
 ADD /apache/phpmyadmin.conf /etc/apache2/conf.d/phpmyadmin.conf
 ADD /apache/mediawiki.conf /etc/apache2/conf.d/mediawiki.conf
 
+# Environement apache2
 ENV APACHE_RUN_USER nobody
 ENV APACHE_RUN_GROUP users
 ENV APACHE_LOG_DIR /var/log/apache2
@@ -30,11 +31,12 @@ ENV APACHE_SERVERADMIN admin@localhost
 VOLUME /config
 VOLUME /database
 
-# Ajout des droits
+# Ajout des droits 
 RUN chown -R nobody:users /config
 RUN chown -R nobody:users /database
 RUN chown -R nobody:users /usr/share/mediawiki
 
+# Port
 EXPOSE 80
 
 # Ajout du script de démarrage 
