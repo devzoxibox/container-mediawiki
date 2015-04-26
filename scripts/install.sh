@@ -31,6 +31,7 @@ rm -R /etc/apache2/sites-available/*
 # changement user apache2
 #chown -R nobody:users /var/lock/apache2/
 chown -R nobody:users /var/log/apache2/
+chown -R nobody:users /var/lib/mysql
 #sed -i 's/export APACHE_RUN_USER=www-data/export APACHE_RUN_USER=nobody/g' /etc/apache2/envvars
 #sed -i 's/export APACHE_RUN_GROUP=www-data/export APACHE_RUN_GROUP=users/g' /etc/apache2/envvars
 
