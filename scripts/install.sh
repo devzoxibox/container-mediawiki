@@ -12,7 +12,7 @@ echo 'phpmyadmin phpmyadmin/mysql/app-pass password password' | debconf-set-sele
 echo 'phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2' | debconf-set-selections
 
 # Installation de phpmyadmin mediawiki
-apt-get update && apt-get -q -y install supervisord mediawiki phpmyadmin php-apc 
+apt-get update && apt-get -q -y install supervisor mediawiki phpmyadmin php-apc 
 # modif dossier mediawiki
 #cp -R /usr/share/mediawiki /config
 
