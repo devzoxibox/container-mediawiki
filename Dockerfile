@@ -10,7 +10,7 @@ RUN chmod +x /tmp/*.sh && \
 
 # Add supervisord conf
 ADD scripts/start-apache2.sh /start-apache2.sh
-ADD scripts/start-mysql.sh /start-mysqld.sh
+ADD scripts/start-mysqld.sh /start-mysqld.sh
 RUN chmod +x /*.sh
 ADD supervisord-apache2.conf /etc/supervisor/conf.d/supervisord-apache2.conf
 ADD supervisord-mysqld.conf /etc/supervisor/conf.d/supervisord-mysqld.conf
