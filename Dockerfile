@@ -28,9 +28,11 @@ ENV APACHE_SERVERADMIN admin@localhost
 
 # Volume
 VOLUME /config
+VOLUME /var/lib/mysql
 
 # Ajout des droits
 RUN chown -R nobody:users /config
+RUN chown -R nobody:users /var/lib/mysql
 RUN chown -R nobody:users /usr/share/mediawiki
 
 EXPOSE 80
