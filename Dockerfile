@@ -22,7 +22,7 @@ ENV APACHE_SERVERADMIN admin@localhost
 
 # Volume
 VOLUME /config
-VOLUME  ["/mysql", "/var/lib/mysql" ]
+VOLUME /var/lib/mysql
 
 # Ajout des droits
 RUN chown -R nobody:users /config
