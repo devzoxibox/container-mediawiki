@@ -9,5 +9,7 @@ fi
 
 
 # Démarrage
-exec mysqld_safe && exec /usr/sbin/apache2 -D FOREGROUND
+exec supervisord -n
+#exec mysqld_safe
+#exec /usr/sbin/apache2 -D FOREGROUND
 
