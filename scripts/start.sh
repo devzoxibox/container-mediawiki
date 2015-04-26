@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -f "/config/*" ]; then
+if [ ! -f "/config/mediawiki" ]; then
 
 	# copy over customised config
 	cp -R /usr/share/mediawiki/* /config
