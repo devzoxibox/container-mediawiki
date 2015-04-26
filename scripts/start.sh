@@ -9,5 +9,6 @@ fi
 
 
 # Démarrage
+service mysql start
 exec /usr/sbin/apache2 -D FOREGROUND
 
