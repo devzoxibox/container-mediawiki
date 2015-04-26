@@ -1,2 +1,2 @@
 #!/bin/bash
-exec mysqld_safe --datadir=/var/lib/mysql
+exec mysqld_safe --datadir=/database
