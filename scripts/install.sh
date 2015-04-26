@@ -25,14 +25,5 @@ rm -R /etc/apache2/sites-enabled/*
 rm -R /etc/apache2/sites-available/*
 
 
-
-# déplacement config mediawiki
-if [ ! -f "/config/index.php" ]; then
-
-	# copy over customised config
-	cp -R /usr/share/mediawiki/* /config
-				
-fi
-
 chown -R nobody:users /var/log/apache2/
 chown -R nobody:users /var/lib/mysql
