@@ -18,20 +18,12 @@ apt-get update && apt-get -q -y install supervisor mediawiki php-apc
 service mysql start && apt-get -q -y install phpmyadmin
 
 
-
 # Remove config apache2
 rm /etc/apache2/conf.d/phpmyadmin.conf
 rm /etc/apache2/conf.d/mediawiki.conf
 rm -R /etc/apache2/sites-enabled/*
 rm -R /etc/apache2/sites-available/*
 
-# changement du port
-#sed -i 's/Include ports.conf/#Include ports.conf/g' /etc/apache2/apache2.conf
 
-# changement user apache2
-#chown -R nobody:users /var/lock/apache2/
 chown -R nobody:users /var/log/apache2/
 chown -R nobody:users /var/lib/mysql
-#sed -i 's/export APACHE_RUN_USER=www-data/export APACHE_RUN_USER=nobody/g' /etc/apache2/envvars
-#sed -i 's/export APACHE_RUN_GROUP=www-data/export APACHE_RUN_GROUP=users/g' /etc/apache2/envvars
-
