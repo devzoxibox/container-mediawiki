@@ -9,11 +9,11 @@ RUN chmod +x /tmp/*.sh && \
     /bin/bash /tmp/install.sh
 
 # Add supervisord conf
-ADD scripts/start-apache2.sh /start-apache2.sh
-ADD scripts/start-mysqld.sh /start-mysqld.sh
+ADD /scripts/start-apache2.sh /start-apache2.sh
+ADD /scripts/start-mysqld.sh /start-mysqld.sh
 RUN chmod +x /*.sh
-ADD supervisord-apache2.conf /etc/supervisor/conf.d/supervisord-apache2.conf
-ADD supervisord-mysqld.conf /etc/supervisor/conf.d/supervisord-mysqld.conf
+ADD /supervisord-apache2.conf /etc/supervisor/conf.d/supervisord-apache2.conf
+ADD /supervisord-mysqld.conf /etc/supervisor/conf.d/supervisord-mysqld.conf
 
 # Config apache2
 ADD /apache/phpmyadmin.conf /etc/apache2/conf.d/phpmyadmin.conf
