@@ -36,7 +36,6 @@ RUN chown -R nobody:users /database
 RUN chown -R nobody:users /usr/share/mediawiki
 
 EXPOSE 80
-EXPOSE 8081
 
 # Ajout du script de démarrage 
 ADD /scripts/start.sh /start.sh
