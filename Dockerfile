@@ -34,7 +34,6 @@ VOLUME /database
 # Ajout des droits 
 RUN chown -R nobody:users /config
 RUN chown -R nobody:users /database
-RUN chown -R nobody:users /usr/share/mediawiki
 
 # Port
 EXPOSE 80
