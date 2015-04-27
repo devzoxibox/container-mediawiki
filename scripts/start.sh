@@ -4,7 +4,7 @@
 if [ ! -f "/config/index.php" ]; then
 
 	# copy over customised config
-	cp -R /usr/share/mediawiki/* /config
+	cp -R /download/* /config
 				
 fi
 
