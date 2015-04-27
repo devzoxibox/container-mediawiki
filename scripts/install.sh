@@ -18,17 +18,23 @@ apt-get update && apt-get -q -y install apache2 mysql-server php5 php5-mysql lib
 service mysql start && apt-get -q -y install phpmyadmin
 
 # Installation de MediaWiki
-  # Env
+  ## Env
 MEDIAWIKI_VERSION=1.24
 MEDIAWIKI_FULL_VERSION=1.24.2
 MEDIAWIKI_DOWNLOAD_URL="https://releases.wikimedia.org/mediawiki/$MEDIAWIKI_VERSION/mediawiki-$MEDIAWIKI_FULL_VERSION.tar.gz";
-
+  ## Install
 mkdir -p /config  && cd /tmp
 wget $MEDIAWIKI_DOWNLOAD_URL
 tar -xvzf /tmp/mediawiki-*.tar.gz
 mv mediawiki-*/* /config
 rm mediawiki-*/*
 
+# Configuration du apache2.conf
+sed -i 's/#Include conf.d\//Include conf.d\//g' /etc/apache2/apache2.conf
+
+# Configuration php.ini
+sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 20M/g' /etc/php5/apache2/php.ini
+sed -i 's/memory_limit = 8M/memory_limit = 128M/g' /etc/php5/apache2/php.ini
 
 
 # Remove config apache2
