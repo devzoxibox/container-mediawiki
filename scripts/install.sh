@@ -29,7 +29,6 @@ cd /tmp
 wget $MEDIAWIKI_DOWNLOAD_URL
 tar -xvzf /tmp/mediawiki-*.tar.gz
 mv mediawiki-*/* /config
-rm mediawiki-*/*
 
 # Configuration du apache2.conf
 sed -i 's/#Include conf.d\//Include conf.d\//g' /etc/apache2/apache2.conf
