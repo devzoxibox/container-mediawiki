@@ -23,7 +23,9 @@ MEDIAWIKI_VERSION=1.24
 MEDIAWIKI_FULL_VERSION=1.24.2
 MEDIAWIKI_DOWNLOAD_URL="https://releases.wikimedia.org/mediawiki/$MEDIAWIKI_VERSION/mediawiki-$MEDIAWIKI_FULL_VERSION.tar.gz";
   ## Install
-mkdir -p /config  && cd /tmp
+mkdir -p /config
+chown -R nobody:users /config
+cd /tmp
 wget $MEDIAWIKI_DOWNLOAD_URL
 tar -xvzf /tmp/mediawiki-*.tar.gz
 mv mediawiki-*/* /config
