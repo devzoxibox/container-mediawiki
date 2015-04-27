@@ -23,12 +23,11 @@ MEDIAWIKI_VERSION=1.24
 MEDIAWIKI_FULL_VERSION=1.24.2
 
 ## Install
-mkdir -p /config
-chown -R nobody:users /config
-
-cd /config
+mkdir -p /download
+chown -R nobody:users /download
+cd /download
 wget https://releases.wikimedia.org/mediawiki/$MEDIAWIKI_VERSION/mediawiki-$MEDIAWIKI_FULL_VERSION.tar.gz
-tar -xvzf /config/mediawiki-*.tar.gz
+tar -xvzf /download/mediawiki-*.tar.gz
 
 
 # Configuration du apache2.conf
