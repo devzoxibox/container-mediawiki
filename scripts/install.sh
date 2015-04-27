@@ -12,15 +12,26 @@ echo 'phpmyadmin phpmyadmin/mysql/app-pass password password' | debconf-set-sele
 echo 'phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2' | debconf-set-selections
 
 # Installation de supervisor mediawiki
-apt-get update && apt-get -q -y install supervisor mediawiki php-apc 
+apt-get update && apt-get -q -y install apache2 mysql-server php5 php5-mysql libapache2-mod-php5 php-apc php5-intl imagemagick php5-cli
 
 # Démarrage mysql pour installation auto phpmyadmin
 service mysql start && apt-get -q -y install phpmyadmin
 
+# Installation de MediaWiki
+  # Env
+MEDIAWIKI_VERSION=1.24
+MEDIAWIKI_FULL_VERSION=1.24.2
+MEDIAWIKI_DOWNLOAD_URL="https://releases.wikimedia.org/mediawiki/$MEDIAWIKI_VERSION/mediawiki-$MEDIAWIKI_FULL_VERSION.tar.gz";
+
+mkdir -p /config  && cd /tmp
+wget $MEDIAWIKI_DOWNLOAD_URL
+tar -xvzf /tmp/mediawiki-*.tar.gz
+mv mediawiki-*/* /config
+rm mediawiki-*/*
+
+
 
 # Remove config apache2
-rm /etc/apache2/conf.d/phpmyadmin.conf
-rm /etc/apache2/conf.d/mediawiki.conf
 rm -R /etc/apache2/sites-enabled/*
 rm -R /etc/apache2/sites-available/*
 
