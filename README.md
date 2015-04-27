@@ -4,21 +4,21 @@
 
 MediaWiki is a free software open source wiki package written in PHP, originally for use on Wikipedia. It is now also used by several other projects of the non-profit Wikimedia Foundation and by many other wikis, including this website, the home of MediaWiki.
 
-![Alt text](http://upload.wikimedia.org/wikipedia/commons/0/01/MediaWiki-smaller-logo.png"")
+![Alt text](http://upload.wikimedia.org/wikipedia/commons/0/01/MediaWiki-smaller-logo.png "")
 
 
 ##Montage pre-build :
 
-'''shell
+```shell
 $ docker pull zoxi/container-mediawiki
-'''
+```
 
 ##Volumes :
 
-###/config
+####/config
 Pour les fichiers de configuration de mediawiki
 
-###/database
+####/database
 Pour la persistence des bases de données mysql
 
 
