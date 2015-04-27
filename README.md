@@ -25,6 +25,7 @@ Pour la persistence des bases de données mysql
 
 
 ##Attention :
+Il faut créer la base de donnée avant de configurer MediWiki (avec phpmyadmin).
 Le mot de passe par défaut pour root (mysql,phpmyadmin) est "password".
 Je vous conseils de le modifier dans phpmyadmin (http://ip_unraid_server:8081/phpmyadmin), avant de configurer MediaWiki.
 
