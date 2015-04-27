@@ -28,7 +28,8 @@ chown -R nobody:users /download
 cd /download
 wget https://releases.wikimedia.org/mediawiki/$MEDIAWIKI_VERSION/mediawiki-$MEDIAWIKI_FULL_VERSION.tar.gz
 tar -xvzf /download/mediawiki-*.tar.gz
-
+mv -R /download/mediawiki-$MEDIAWIKI_FULL_VERSION/* /download
+rm -R /download/mediawiki-$MEDIAWIKI_FULL_VERSION.tar.gz
 
 # Configuration du apache2.conf
 sed -i 's/#Include conf.d\//Include conf.d\//g' /etc/apache2/apache2.conf
