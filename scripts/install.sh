@@ -24,7 +24,7 @@ MEDIAWIKI_FULL_VERSION=1.24.2
 
 ## Install
 mkdir -p /download
-mkdir -P /download/www
+mkdir -p /download/www
 chown -R nobody:users /download
 chown -R nobody:users /download/www
 cd /download
