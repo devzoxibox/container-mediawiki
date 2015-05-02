@@ -13,7 +13,7 @@ echo 'phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2' | debconf
 
 
 # Installation de supervisor mediawiki
-apt-get update && apt-get -q -y install apache2 python-software-properties mariadb-server php5 php5-mysql libapache2-mod-php5 php-apc php5-intl imagemagick php5-cli
+apt-get update && apt-get -q -y install apache2 mariadb-server php5 php5-mysql libapache2-mod-php5 php-apc php5-intl imagemagick php5-cli
 
 # Démarrage mysql pour installation auto phpmyadmin
 service mysql start && apt-get -q -y install phpmyadmin
