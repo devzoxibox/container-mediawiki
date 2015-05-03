@@ -43,6 +43,5 @@ EXPOSE 80
 ADD /scripts/start.sh /start.sh
 RUN chmod +x /*.sh
 
-USER nobody
 
 ENTRYPOINT ["/start.sh"]
