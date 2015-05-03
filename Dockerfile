@@ -18,6 +18,7 @@ ADD /supervisord-mysqld.conf /etc/supervisor/conf.d/supervisord-mysqld.conf
 # Config apache2
 ADD /apache/phpmyadmin.conf /etc/apache2/sites-enabled/phpmyadmin.conf
 ADD /apache/mediawiki.conf /etc/apache2/sites-enabled/mediawiki.conf
+RUN cd /etc/apache2 && dir
 
 # Environement apache2
 ENV APACHE_RUN_USER nobody
