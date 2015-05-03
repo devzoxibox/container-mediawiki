@@ -35,17 +35,8 @@ cp -R /download/mediawiki-$MEDIAWIKI_FULL_VERSION/* /download/www
 rm -R /download/mediawiki-$MEDIAWIKI_FULL_VERSION
 rm -R /download/mediawiki-$MEDIAWIKI_FULL_VERSION.tar.gz
 
-# Configuration du apache2.conf
-sed -i 's/#Include conf.d\//Include conf.d\//g' /etc/apache2/apache2.conf
 
 # Configuration php.ini
-sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 20M/g' /etc/php5/apache2/php.ini
-sed -i 's/memory_limit = 8M/memory_limit = 128M/g' /etc/php5/apache2/php.ini
+#sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 20M/g' /etc/php5/apache2/php.ini
+#sed -i 's/memory_limit = 8M/memory_limit = 128M/g' /etc/php5/apache2/php.ini
 
-
-# Remove config apache2
-rm -R /etc/apache2/sites-enabled/*
-rm -R /etc/apache2/sites-available/*
-
-# Droits pour apache2
-chown -R nobody:users /var/log/apache2/
