@@ -1,22 +1,7 @@
 #!/bin/bash
 
-# Ajout du mdp mysql
-echo 'mysql-server mysql-server/root_password password $MARIADB_ROOT_PASSWD' | debconf-set-selections
-echo 'mysql-server mysql-server/root_password_again password $MARIADB_ROOT_PASSWD' | debconf-set-selections
-
-# Ajout du mdp et config phpmyadmin
-echo 'phpmyadmin phpmyadmin/dbconfig-install boolean true' | debconf-set-selections
-echo 'phpmyadmin phpmyadmin/app-password-confirm password $MARIADB_ROOT_PASSWD' | debconf-set-selections
-echo 'phpmyadmin phpmyadmin/mysql/admin-pass password $MARIADB_ROOT_PASSWD' | debconf-set-selections
-echo 'phpmyadmin phpmyadmin/mysql/app-pass password $MARIADB_ROOT_PASSWD' | debconf-set-selections
-echo 'phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2' | debconf-set-selections
-
-
-# Installation de supervisor mediawiki
-apt-get update && apt-get -q -y install apache2 mariadb-server php5 php5-mysql libapache2-mod-php5 php-apc php5-intl imagemagick php5-cli
-
-# Démarrage mysql pour installation auto phpmyadmin
-service mysql start && apt-get -q -y install phpmyadmin
+# Installation Apache2
+apt-get update && apt-get -q -y install apache2 php5 php5-mysql libapache2-mod-php5 php-apc php5-intl imagemagick php5-cli
 
 # Installation de MediaWiki
   ## Env
