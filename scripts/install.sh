@@ -20,8 +20,8 @@ service mysql start && apt-get -q -y install phpmyadmin
 
 # Installation de MediaWiki
   ## Env
-MEDIAWIKI_VERSION=1.24
-MEDIAWIKI_FULL_VERSION=1.24.2
+MEDIAWIKI_VERSION=1.26
+MEDIAWIKI_FULL_VERSION=1.26.2
 
   ## Install
 mkdir -p /download
