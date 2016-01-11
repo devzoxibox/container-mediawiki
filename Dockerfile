@@ -10,13 +10,11 @@ RUN chmod +x /tmp/*.sh && \
 
 # Add supervisord conf
 ADD /scripts/start-apache2.sh /start-apache2.sh
-ADD /scripts/start-mysqld.sh /start-mysqld.sh
 RUN chmod +x /*.sh
 ADD /supervisord-apache2.conf /etc/supervisor/conf.d/supervisord-apache2.conf
-ADD /supervisord-mysqld.conf /etc/supervisor/conf.d/supervisord-mysqld.conf
+
 
 # Config apache2
-ADD /apache/phpmyadmin.conf /etc/apache2/sites-available/phpmyadmin.conf
 ADD /apache/mediawiki.conf /etc/apache2/sites-available/mediawiki.conf
 #RUN a2ensite mediawiki
 
@@ -30,11 +28,9 @@ ENV APACHE_SERVERADMIN admin@localhost
 
 # Volume
 VOLUME /config
-VOLUME /database
 
 # Ajout des droits 
 RUN chown -R nobody:users /config
-RUN chown -R nobody:users /database
 
 # Port
 EXPOSE 80
